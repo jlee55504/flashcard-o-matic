@@ -12,14 +12,13 @@ function Deck() {
     const { deckId } = useParams();
     const [ deckCards, setDeckCards ] = useState([]);
     const [ updateCardList, setUpdateCardList ] = useState(false);
-    const [ selectedDeck, setSelectedDeck ] = useState({});
+    const [ deck, setDeck ] = useState({});
     const navigate = useNavigate();
     const [ cardsToDisplay, setCardsToDisplay ] = useState([]);
-    // const [cardDivBackgroundColor, setCardDivBackgroundColor] = useState(false);
     useEffect(() => {
         async function getDeck() {
             const selectedDeck = await readDeck(deckId);
-            setSelectedDeck(selectedDeck);
+            setDeck(selectedDeck);
             setDeckCards(selectedDeck.cards);
             setUpdateCardList(false);
         } getDeck();
@@ -56,7 +55,7 @@ function Deck() {
         if (confirm === true) {
             await deleteCard(cardId);   
             setUpdateCardList(!false);
-        }// else if (confirm === false) cardDiv.style.backgroundColor = "white";
+        }
     }
 
     async function handleDeleteDeck(deckId) {
@@ -71,11 +70,11 @@ function Deck() {
         <div className='-deck-deck-div'>
             <div className='nav-bar'><Link to="/" className='home-link' >
                 <Image src={home} className='home-icon' />
-                Home</Link> / {selectedDeck.name}
+                Home</Link> / {deck.name}
                 </div>
             <div className="select-deck-div">
-            <h3>{selectedDeck.name}</h3>
-            <p>{selectedDeck.description}</p>
+            <h3>{deck.name}</h3>
+            <p>{deck.description}</p>
             <div className="select-deck-btns-div">
                 <Button variant="secondary" type="button" className="Deck-edit-deck-Btn" onClick={()=> navigate(`/decks/${deckId}/edit`)} >
                     <Image src={edit} className="edit-img" />
