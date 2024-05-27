@@ -14,7 +14,8 @@ function Deck() {
     const [ updateCardList, setUpdateCardList ] = useState(false);
     const [ selectedDeck, setSelectedDeck ] = useState({});
     const navigate = useNavigate();
-    const [ cardsToDisplay, setCardsToDisplay ] = useState([])
+    const [ cardsToDisplay, setCardsToDisplay ] = useState([]);
+    // const [cardDivBackgroundColor, setCardDivBackgroundColor] = useState(false);
     useEffect(() => {
         async function getDeck() {
             const selectedDeck = await readDeck(deckId);
@@ -34,11 +35,12 @@ function Deck() {
                 <div className="card-div-back-div" >
                     <p className="card-div-back-p" >{card.back}</p>
                     <div className="card-div-btns-div" >
-                        <Button variant="secondary" type="button" onClick={()=> navigate(`/decks/${deckId}/cards/${card.id}/edit`)} >
+                        <Button variant="secondary" type="button" className="Deck-edit-card-btn" onClick={()=> navigate(`/decks/${deckId}/cards/${card.id}/edit`)} >
                             <Image src={edit} className="edit-img" />
                             Edit
                         </Button>
-                        <Button variant="danger" type="button" onClick={() => handleDeleteCard(card.id)} >
+                        <Button variant="danger" type="button" className="Deck-trashcan-card-btn" onClick={(event) => {                             
+                            handleDeleteCard(card.id)}} >
                             <Image src={trashcan} className="trashcan-img" />
                         </Button>
                     </div>
@@ -49,19 +51,18 @@ function Deck() {
         }
     }, [deckCards]);
 
-
     async function handleDeleteCard(cardId) {
         const confirm = window.confirm("Delete this card? \n You will not be able to recover it.");
         if (confirm === true) {
-            await deleteCard(cardId);
+            await deleteCard(cardId);   
             setUpdateCardList(!false);
-        }
+        }// else if (confirm === false) cardDiv.style.backgroundColor = "white";
     }
 
     async function handleDeleteDeck(deckId) {
         const confirm = window.confirm("Delete this deck? \n You will not be able to recover it.");
         if (confirm === true) {
-            await deleteDeck(deckId);
+            await deleteDeck(deckId); 
             navigate("/");
         }
     }
@@ -76,19 +77,19 @@ function Deck() {
             <h3>{selectedDeck.name}</h3>
             <p>{selectedDeck.description}</p>
             <div className="select-deck-btns-div">
-                <Button variant="secondary" type="button" onClick={()=> navigate(`/decks/${deckId}/edit`)} >
+                <Button variant="secondary" type="button" className="Deck-edit-deck-Btn" onClick={()=> navigate(`/decks/${deckId}/edit`)} >
                     <Image src={edit} className="edit-img" />
                     Edit
                 </Button>
-                <Button variant="primary" type="button" onClick={()=> navigate(`/decks/${deckId}/study`)} >
+                <Button variant="primary" type="button" className="Deck-study-deck-btn" onClick={()=> navigate(`/decks/${deckId}/study`)} >
                     <Image src={book} className="book-img" />
                     Study
                 </Button>
-                <Button variant="primary" type="button" onClick={()=> navigate(`/decks/${deckId}/cards/new`)} >
+                <Button variant="primary" type="button" className="Deck-add-cards-to-deck-btn" onClick={()=> navigate(`/decks/${deckId}/cards/new`)} >
                     <Image src={add} className="add-img" />
                     Add Cards
                 </Button>
-                <Button variant="danger" type="button" onClick={() => handleDeleteDeck(deckId)} >
+                <Button variant="danger" type="button" className="Deck-trashcan-deck-btn" onClick={() => handleDeleteDeck(deckId)} >
                     <Image src={trashcan} className="trashcan-img" />
                 </Button>
             </div>
