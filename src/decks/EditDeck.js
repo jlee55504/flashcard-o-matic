@@ -5,7 +5,7 @@ import { readDeck, updateDeck } from '../utils/api/index';
 import { Image, Button } from 'react-bootstrap';
 export function EditDeck() {
     const { deckId } = useParams();
-    const [selectedDeck, setSelectedDeck] = useState({});
+    const [deck, setDeck] = useState({});
     const [deckName, setDeckName] = useState("");
     const [deckDescription, setDeckDescription] = useState("")
     const [waitForDeckToUpdate, setWaitForDeckToUpdate] = useState(false); 
@@ -14,15 +14,15 @@ export function EditDeck() {
     useEffect(() => {
         const abortController = new AbortController();
         async function getDeck() {
-            const deck = await readDeck(deckId, abortController.signal);
-            setSelectedDeck(deck);
+            const currentDeck = await readDeck(deckId, abortController.signal);
+            setDeck(currentDeck);
         }
         getDeck();
-    }, [selectedDeck]);
+    }, [deck]);
 
     useEffect(() => {
-        if (selectedDeck != {} && waitForDeckToUpdate === true)   { 
-            updateDeck(selectedDeck);
+        if (deck != {} && waitForDeckToUpdate === true)   { 
+            updateDeck(deck);
             setWaitForDeckToUpdate(false);
         }
     }, [waitForDeckToUpdate]) 
@@ -34,8 +34,8 @@ export function EditDeck() {
 
      function handleSubmit(event) {
         event.preventDefault(); 
-        setSelectedDeck({
-        id: Number(selectedDeck.id),    
+        setDeck({
+        id: Number(deck.id),    
         name: deckName,
         description: deckDescription
         });
@@ -49,17 +49,17 @@ export function EditDeck() {
         <>
         <div className='nav-bar'><Link to="/" className='home-link' >
                 <Image src={home} className='home-icon' />
-                Home</Link> / {selectedDeck.name} / Edit Deck</div>
+                Home</Link> / {deck.name} / Edit Deck</div>
         <h1>Edit Deck</h1>
         <form onSubmit={handleSubmit}>
             <label htmlfor="EditDeck-deck-name" >Name
                 <input type="text" id="EditDeck-deck-name" name="EditDeck-deck-name" 
-                placeholder={selectedDeck.name} value={deckName} 
+                placeholder={deck.name} value={deckName} 
                 onChange={handleChange} required ></input>
             </label>
             <label htmlfor="EditDeck-deck-description" >Description
                 <textarea id="EditDeck-deck-description" name="EditDeck-deck-description"
-                 placeholder={selectedDeck.description} value={deckDescription} 
+                 placeholder={deck.description} value={deckDescription} 
                  onChange={handleChange} required ></textarea>
                  <Button type="button" variant="secondary" 
                  className="EditDeck-cancel-btn" onClick={()=> navigate(`/decks/${deckId}`)} >
