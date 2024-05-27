@@ -6,8 +6,8 @@ import home from '../imgs/home.png';
 import add from '../imgs/add.png';
 function Study() {
     const { deckId } = useParams();
-    const [selectedDeckName, setSelectedDeckName] = useState("");
-    const [selectedDeckCards, setSelectedDeckCards] = useState([]);
+    const [deckName, setDeckName] = useState("");
+    const [deckCards, setDeckCards] = useState([]);
     const [currentCardNumber, setCurrentCardNumber] = useState(1);
     const [currentCardIndex, setCurrentCardIndex] = useState(0);
     const [currentCardText, setCurrentCardText] = useState("");
@@ -20,27 +20,27 @@ function Study() {
     useEffect(() => {
         async function getDeck() {
             const selectedDeck = await readDeck(deckId);
-            setSelectedDeckName(selectedDeck.name);
-            setSelectedDeckCards(selectedDeck.cards);              
+            setDeckName(selectedDeck.name);
+            setDeckCards(selectedDeck.cards);              
         }
          getDeck();
     }, []);
 
     useEffect(() => {
-       if(selectedDeckCards.length > 0 && currentCardIndex === 0) {
-            setCurrentCardText(selectedDeckCards[0].front);
+       if(deckCards.length > 0 && currentCardIndex === 0) {
+            setCurrentCardText(deckCards[0].front);
         }
         
-    }, [selectedDeckCards, currentCardIndex]);
+    }, [deckCards, currentCardIndex]);
 
     const handleCardFlip = (dontFlipCard = false) => {
-       if (currentCardIndex -1 === selectedDeckCards.length -1 && dontFlipCard === false) {
+       if (currentCardIndex -1 === deckCards.length -1 && dontFlipCard === false) {
         const confirm = window.confirm("Restart cards? \n Click 'cancel' to return to the home page.");
          if (confirm == true) {   
              setCurrentCardIndex((currentIndex) => currentIndex = 0);
              setCurrentCardNumber((currentCardNumber) => currentCardNumber = 1);
              navigate(`/decks/${deckId}/study`);
-             setIsCardFlipped(false)
+             setIsCardFlipped(false);
              return;
          }    
          else if (confirm == false) navigate("/");
@@ -51,18 +51,18 @@ if (isCardFlipped === false && dontFlipCard === false || isCardFlipped === true
             setIsCardFlipped(true);
             setSameCard(true);
             if (dontFlipCard === false){ 
-                setCurrentCardText(selectedDeckCards[currentCardIndex].back);
+                setCurrentCardText(deckCards[currentCardIndex].back);
                 setCurrentCardIndex((index) => index + 1);
             }
             else if (dontFlipCard === true) {
-                setCurrentCardText(selectedDeckCards[currentCardIndex -1].front);
+                setCurrentCardText(deckCards[currentCardIndex -1].front);
                 setIsCardFlipped(false);
             }
         } else if (isCardFlipped === true && dontFlipCard === false) {
-            setCurrentCardText(selectedDeckCards[currentCardIndex].front);
+            setCurrentCardText(deckCards[currentCardIndex].front);
             setIsCardFlipped(false);
         }else if (isCardFlipped === false && dontFlipCard === true) {
-            setCurrentCardText(selectedDeckCards[currentCardIndex -1].back);
+            setCurrentCardText(deckCards[currentCardIndex -1].back);
             setIsCardFlipped(true);
         }
     }
@@ -97,22 +97,20 @@ if (isCardFlipped === false && dontFlipCard === false || isCardFlipped === true
         <div className='study-div'>
             <div className='nav-bar'><Link to="/" className='home-link' >
                 <Image src={home} className='home-icon' />
-                Home</Link> / <Link>{selectedDeckName}</Link> / Study</div>
-            <h1>Study: {selectedDeckName}</h1>
-           { selectedDeckCards.length >=3 ? <Card>
+                Home</Link> / <Link>{deckName}</Link> / Study</div>
+            <h1>Study: {deckName}</h1>
+           { deckCards.length >= 3 ? <Card>
               <Card.Body>
-                <Card.Title>Card of {currentCardNumber} of 
-                {selectedDeckCards.length}</Card.Title>
+                <Card.Title>Card of {currentCardNumber} of {deckCards.length}</Card.Title>
                 <Card.Text> {currentCardText} </Card.Text>
                 {buttonsToDisplay}
               </Card.Body>
             </Card> : <>
                 <h2>NotEnoughCards</h2>
-                <p>You need at least 3 cards to study. There are 
-                    {selectedDeckCards.length} in this deck.</p>
+                <p>You need at least 3 cards to study. There are {deckCards.length} in this deck.</p>
                  <Button variant='primary' 
                  onClick={() => navigate(`/decks/${deckId}/cards/new`)} > 
-                 <Image src={add} className="add-icon"  />Add Cards</Button>
+                 <Image src={add} className="add-img"  />Add Cards</Button>
             </>
             }
         </div>
