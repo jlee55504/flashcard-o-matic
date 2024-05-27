@@ -8,7 +8,7 @@ export function EditDeck() {
     const [selectedDeck, setSelectedDeck] = useState({});
     const [deckName, setDeckName] = useState("");
     const [deckDescription, setDeckDescription] = useState("")
-    const [waitForDeck, setWaitForDeck] = useState(false); 
+    const [waitForDeckToUpdate, setWaitForDeckToUpdate] = useState(false); 
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -21,11 +21,11 @@ export function EditDeck() {
     }, [selectedDeck]);
 
     useEffect(() => {
-        if (selectedDeck != {} && waitForDeck === true)   { 
+        if (selectedDeck != {} && waitForDeckToUpdate === true)   { 
             updateDeck(selectedDeck);
-            setWaitForDeck(false);
+            setWaitForDeckToUpdate(false);
         }
-    }, [waitForDeck]) 
+    }, [waitForDeckToUpdate]) 
 
     const handleChange = ({ target }) => {
         if (target.name === "EditDeck-deck-name") setDeckName(target.value);
@@ -39,7 +39,7 @@ export function EditDeck() {
         name: deckName,
         description: deckDescription
         });
-        setWaitForDeck(true);  
+        setWaitForDeckToUpdate(true);  
         setDeckName("");
         setDeckDescription("");
              
