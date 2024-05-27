@@ -6,14 +6,14 @@ import home from '../imgs/home.png';
 import Image from 'react-bootstrap/Image';
 function AddCard() {
     const { deckId } = useParams();
-    const [selectedDeckName, setSelectedDeckName] = useState("");
+    const [deckName, setDeckName] = useState("");
     const [frontCardText, setFrontCardText] = useState("");
     const [backCardText, setbackCardText] = useState("");
-    const navigate = useNavigate();
+   // const navigate = useNavigate();
     useEffect(() => {
         async function getDeck() {
             const selectedDeck = await readDeck(deckId);
-            setSelectedDeckName(selectedDeck.name);
+            setDeckName(selectedDeck.name);
         } getDeck();
     }, []);
     
@@ -24,7 +24,7 @@ function AddCard() {
 
     const handleSubmit = event => {
         event.preventDefault();
-        createCard(deckId, {front: frontCardText, Back: backCardText})
+        createCard(deckId, {front: frontCardText, back: backCardText})
         setFrontCardText("");
         setbackCardText("");
     }
@@ -32,8 +32,8 @@ function AddCard() {
         <div className='add-card-div'>
 <div className='nav-bar'><Link to="/" className='home-link' >
                 <Image src={home} className='home-icon' />
-                Home</Link> / <Link>{selectedDeckName}</Link> / Add Card</div>
-                <h1>{selectedDeckName}: Add Card</h1>
+                Home</Link> / <Link>{deckName}</Link> / Add Card</div>
+                <h1>{deckName}: Add Card</h1>
                 <form onSubmit={handleSubmit}>
                 <label htmlFor='front-card'>
                 Front<textarea id="front-card" name="front-card" placeholder='Front side of card' onChange={handleChange} value={frontCardText} ></textarea>
