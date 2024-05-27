@@ -377,3 +377,23 @@ background-color: #d7d7d7d9;
 
  }
 /* End of Deck.js */
+
+
+
+/* Start of EditDeck.js */
+
+#EditDeck-deck-name, #EditDeck-deck-description {
+    display: block;
+    width: 100%;
+}
+
+#EditDeck-deck-description {
+    height: 12rem;
+    margin-bottom: 1rem;
+}
+
+.EditDeck-cancel-btn {
+    margin-right: .5rem;
+}
+
+/* End of EditDeck.js */
