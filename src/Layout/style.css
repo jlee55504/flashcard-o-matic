@@ -6,9 +6,38 @@ label {
     margin-bottom: 1.5rem;
 }
 
+.eye-img {
+    width:18px;
+    height:28px;
+    font-weight: bold;
+    margin-right: .25rem;
+}
+
+.book-img {
+
+}
+.trashcan-img {
+
+}
+
+.edit-img {
+
+}
+
+.add-img {
+    width: 20px;
+    height: 21px;
+}
+
 /* End of 'universal' 'elements' */
 
 /* Start of './Layout/index.js' */
+
+.deck-div {
+    border: 1px solid #dfd6d6;
+    padding: 1.1rem;
+    border-radius: 5px;
+}
 
 .create-deck-btn {
     display: flex;
@@ -16,12 +45,7 @@ label {
     gap: 5px;
     margin-bottom: 1%;
 }
-.eye-logo {
-    width:18px;
-    height:28px;
-    font-weight: bold;
-    margin-right: .25rem;
-}
+
 .trashcan-btn {
     justify-self: flex-end;
 }
@@ -152,10 +176,7 @@ label {
     border-color: #6c757d;
 }
 
-.add-icon {
-    width: 20px;
-    height: 21px;
-}
+
 .trashcan-link {
     color: #fff;
     background-color: #dc3545;
@@ -203,11 +224,7 @@ label {
     display:inline-block;
     color: #676666;
 }
-.deck-div {
-    border: 1px solid #dfd6d6;
-    padding: 1.1rem;
-    border-radius: 5px;
-}
+
 .header-card-count-div {
     display: flex;
     justify-content: space-between;
@@ -279,3 +296,84 @@ label {
 }
 
 /* End of Study.js */
+
+
+/* Start of Deck.js */
+.select-deck-btns-div {
+
+}
+
+.select-deck-btns-div > * {
+    margin-right: .5rem;
+}
+
+.select-deck-btns-div :nth-child(3) {
+    margin-right: 67%;
+}
+
+.card-div {
+    border: 1px solid #dfd6d6;
+    padding: 1.1rem;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 30px;
+}
+
+.card-div-btns-div {
+    display: flex;
+    gap: .5rem;
+}
+.card-div-front-div {
+    width: 21%;
+}
+
+.card-div-front-p {
+
+}
+
+.card-div-back-div {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    width: 21%;
+    justify-content: center;
+}
+
+.card-div-back-p {
+
+}
+
+.select-deck-div {
+    margin-bottom: 1.5rem;
+}
+.card-div:has(.card-div-back-div):has(.card-div-btns-div):has(.Deck-trashcan-card-btn):active,
+.select-deck-div:has(.select-deck-btns-div):has(.Deck-trashcan-deck-btn):active {
+background-color: #d7d7d7d9;
+}
+.cards-div {
+   /* display: flex;
+    flex-direction: column;
+    align-items: center;*/
+}
+
+.Deck-edit-deck-btn{
+
+}
+
+.Deck-edit-card-Btn {
+
+}
+.Deck-study-deck-btn {
+
+}
+
+ .Deck-add-cards-to-deck-btn {
+
+ }
+
+ .Deck-trashcan-deck-btn {
+
+ }
+/* End of Deck.js */
