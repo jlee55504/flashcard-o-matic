@@ -265,24 +265,26 @@ label {
 /* Start of CreateDeck.js */
 
 
-.create-deck-h1 {
+.createDeck-create-deck-h1 {
 
 }
 
-#name, #description {
+#CreateDeck-name, #CreatDeck-description {
     display: block;
     width: 100%;
     margin-top: .5rem;
     padding: .5rem;
 }
 
-#description {
+#CreateDeck-description {
     height: 10rem;
 }
-.cancel-btn {
+.CreateDeck-cancel-btn {
     margin-right: .5rem;
 }
+.CreateDeck-submit-btn {
 
+}
 /* End of CreateDeck.js */
 
 /* Start of AddCard.js */
@@ -299,7 +301,7 @@ label {
 
 /* Start of Study.js */
 
-.flip-btn {
+.Study-flip-btn {
     margin-right: .5rem;
 }
 
@@ -307,19 +309,19 @@ label {
 
 
 /* Start of Deck.js */
-.select-deck-btns-div {
+.Deck-select-deck-btns-div {
 
 }
 
-.select-deck-btns-div > * {
+.Deck-select-deck-btns-div > * {
     margin-right: .5rem;
 }
 
-.select-deck-btns-div :nth-child(3) {
+.Deck-select-deck-btns-div :nth-child(3) {
     margin-right: 67%;
 }
 
-.card-div {
+.Deck-card-div {
     border: 1px solid #dfd6d6;
     padding: 1.1rem;
     border-radius: 5px;
@@ -329,19 +331,19 @@ label {
     gap: 30px;
 }
 
-.card-div-btns-div {
+.Deck-card-div-btns-div {
     display: flex;
     gap: .5rem;
 }
-.card-div-front-div {
+.Deck-card-div-front-div {
     width: 21%;
 }
 
-.card-div-front-p {
+.Deck-card-div-front-p {
 
 }
 
-.card-div-back-div {
+.Deck-card-div-back-div {
     display: flex;
     flex-direction: column;
     align-items: end;
@@ -349,21 +351,19 @@ label {
     justify-content: center;
 }
 
-.card-div-back-p {
+.Deck-card-div-back-p {
 
 }
 
-.select-deck-div {
+.Deck-select-deck-div {
     margin-bottom: 1.5rem;
 }
-.card-div:has(.card-div-back-div):has(.card-div-btns-div):has(.Deck-delete-card-btn):active,
-.select-deck-div:has(.select-deck-btns-div):has(.Deck-delete-deck-btn):active {
+.card-div:has(.Deck-card-div-back-div):has(.Deck-card-div-btns-div):has(.Deck-delete-card-btn):active,
+.Deck-select-deck-div:has(.select-deck-btns-div):has(.Deck-delete-deck-btn):active {
 background-color: #d7d7d7d9;
 }
-.cards-div {
-   /* display: flex;
-    flex-direction: column;
-    align-items: center;*/
+.Deck-cards-div {
+
 }
 
 .Deck-edit-deck-btn{
