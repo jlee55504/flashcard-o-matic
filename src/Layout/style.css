@@ -288,12 +288,17 @@ label {
 /* End of CreateDeck.js */
 
 /* Start of AddCard.js */
-#front-card, #back-card {
+
+#AddCard-front-card, #AddCard-back-card {
     display: block;
     width: 100%;
 }
-.done-btn {
+.AddCard-done-btn {
     margin-right: .5rem;
+}
+
+.AddCard-save-btn {
+
 }
 
 /* End of AddCard.js */
@@ -310,7 +315,7 @@ label {
 }
 
 .Study-add-cards-to-deck {
-    
+
 }
 
 /* End of Study.js */
