@@ -11,8 +11,9 @@ function AddCard() {
     const [backCardText, setbackCardText] = useState("");
 
     useEffect(() => {
+        const abortController = new AbortController();
         async function getDeck() {
-            const selectedDeck = await readDeck(deckId);
+            const selectedDeck = await readDeck(deckId, abortController.signal);
             setDeckName(selectedDeck.name);
         } getDeck();
     }, []);
@@ -24,7 +25,8 @@ function AddCard() {
 
     const handleSubmit = event => {
         event.preventDefault();
-        createCard(deckId, {front: frontCardText, back: backCardText});
+        const abortController = new AbortController();
+        createCard(deckId, {front: frontCardText, back: backCardText}, abortController.signal);
         setFrontCardText("");
         setbackCardText("");
     }
