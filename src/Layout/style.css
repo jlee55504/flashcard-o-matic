@@ -397,3 +397,40 @@ background-color: #d7d7d7d9;
 }
 
 /* End of EditDeck.js */
+
+
+/* Start of EditCard.js */
+
+.EditCard-cancel-btn {
+    margin-right: .5rem;
+}
+
+.EditCard-submit-btn {
+
+}
+#EditCard-front-text, #EditCard-back-text {
+    display: block;
+    width: 100%;
+    overflow-y: auto;
+    padding-left: 1rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+
+#EditCard-front-text {
+    height: 5.7rem;
+}
+.a {
+    
+}
+#EditCard-back-text {
+    height: 6rem;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.EditCard-front-text-label {
+    width: 100%;
+}
+
+/* End of EditCard.js */
