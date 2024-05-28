@@ -97,7 +97,7 @@ if (isCardFlipped === false && dontFlipCard === false || isCardFlipped === true
         <div className='study-div'>
             <div className='nav-bar'><Link to="/" className='home-link' >
                 <Image src={home} className='home-icon' />
-                Home</Link> / <Link>{deckName}</Link> / Study</div>
+                Home</Link> / <Link to={`/decks/${deckId}`}>{deckName}</Link> / Study</div>
             <h1>Study: {deckName}</h1>
            { deckCards.length >= 3 ? <Card>
               <Card.Body>
