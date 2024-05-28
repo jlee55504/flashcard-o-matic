@@ -19,8 +19,8 @@ function AddCard() {
     }, []);
     
     const handleChange = ({ target }) => {
-        if (target.name === "front-card") setFrontCardText(target.value);
-        else if (target.name === "back-card") setbackCardText(target.value);
+        if (target.name === "AddCard-front-card") setFrontCardText(target.value);
+        else if (target.name === "AddCard-back-card") setbackCardText(target.value);
     }
 
     const handleSubmit = event => {
@@ -35,17 +35,17 @@ function AddCard() {
         <>
             <div className='nav-bar'><Link to="/" className='home-link' >
                 <Image src={home} className='home-icon' />
-                Home</Link> / <Link to={`/decks/${deckId}`}>{deckName}</Link> / Add Card</div>
+                    Home</Link> / <Link to={`/decks/${deckId}`}>{deckName}</Link> / Add Card</div>
                 <h1>{deckName}: Add Card</h1>
                 <form onSubmit={handleSubmit}>
-                    <label htmlFor='front-card'>
-                        Front<textarea id="front-card" name="front-card" placeholder='Front side of card' onChange={handleChange} value={frontCardText} required ></textarea>
+                    <label htmlFor='AddCard-front-card'>
+                        Front<textarea id="AddCard-front-card" name="AddCard-front-card" placeholder='Front side of card' onChange={handleChange} value={frontCardText} required ></textarea>
                     </label>
-                    <label htmlFor='back-card'>
-                    Back<textarea id="back-card" name="back-card" placeholder='Back side of card' onChange={handleChange} value={backCardText} required ></textarea>
+                    <label htmlFor='AddCard-back-card'>
+                    Back<textarea id="AddCard-back-card" name="AddCard-back-card" placeholder='Back side of card' onChange={handleChange} value={backCardText} required ></textarea>
                     </label>
-        <Button variant='secondary' type="button" className='done-btn' >Done</Button>
-        <Button variant='primary' type='submit' >Save</Button>
+                <Button variant='secondary' type="button" className='AddCard-done-btn' >Done</Button>
+                <Button variant='primary' type='submit' className='AddCard-save-btn' >Save</Button>
                 </form>
             </>
     );
