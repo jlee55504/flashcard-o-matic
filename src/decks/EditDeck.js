@@ -50,28 +50,27 @@ export function EditDeck() {
         <div className='nav-bar'><Link to="/" className='home-link' >
                 <Image src={home} className='home-icon' />
                 Home</Link> / <Link to={`/decks/${deckId}`}>{deck.name}</Link> / Edit Deck</div>
-        <h1>Edit Deck</h1>
-        <form onSubmit={handleSubmit}>
-            <label htmlfor="EditDeck-deck-name" >Name
-                <input type="text" id="EditDeck-deck-name" name="EditDeck-deck-name" 
-                placeholder={deck.name} value={deckName} 
-                onChange={handleChange} required ></input>
-            </label>
-            <label htmlfor="EditDeck-deck-description" >Description
-                <textarea id="EditDeck-deck-description" name="EditDeck-deck-description"
-                 placeholder={deck.description} value={deckDescription} 
-                 onChange={handleChange} required ></textarea>
+            <h1>Edit Deck</h1>
+            <form onSubmit={handleSubmit}>
+                <label htmlfor="EditDeck-deck-name" >Name
+                    <input type="text" id="EditDeck-deck-name" name="EditDeck-deck-name" 
+                    placeholder={deck.name} value={deckName} 
+                    onChange={handleChange} required ></input>
+                </label>
+                <label htmlfor="EditDeck-deck-description" >Description
+                    <textarea id="EditDeck-deck-description" name="EditDeck-deck-description"
+                    placeholder={deck.description} value={deckDescription} 
+                    onChange={handleChange} required ></textarea>
                  <Button type="button" variant="secondary" 
-                 className="EditDeck-cancel-btn" onClick={()=> navigate(`/decks/${deckId}`)} >
-                    Cancel
+                    className="EditDeck-cancel-btn" onClick={()=> navigate(`/decks/${deckId}`)} >
+                        Cancel
                  </Button>
                  <Button type="submit" variant="primary" 
                  className="EditDeck-submit-btn" >Submit</Button>
-            </label>
-        </form>
+                </label>
+            </form>
         </>
-    )
-    
+    );
 }
 
 export default EditDeck;
