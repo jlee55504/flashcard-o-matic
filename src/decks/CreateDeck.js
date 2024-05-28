@@ -14,8 +14,8 @@ function CreateDeck() {
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
     const handleChange = ({ target }) => {
-        if (target.name === "name") setName(target.value);
-        else if (target.name === "description") setDescription(target.value)
+        if (target.name === "CreateDeck-name") setName(target.value);
+        else if (target.name === "CreateDeck-description") setDescription(target.value)
 
     }
 
@@ -32,17 +32,17 @@ function CreateDeck() {
             <div className='nav-bar'><Link to="/" className='home-link' >
                 <Image src={home} className='home-icon' />
                 Home</Link> / Create Deck</div>
-            <h1 className='create-deck-h1'>Create Deck</h1>
+            <h1 className='CreateDeck-create-deck-h1'>Create Deck</h1>
             <form onSubmit={handleSubmit}>
-                <label htmlFor='name'>
+                <label htmlFor='CreateDeck-name'>
                     Name
-                    <input type='text' name="name" id="name" placeholder='Deck Name' onChange={handleChange} value={name} />
+                    <input type='text' name="CreateDeck-name" id="CreateDeck-name" placeholder='Deck Name' onChange={handleChange} value={name} />
                 </label>
-                <label htmlFor='description'>
-                    Description<textarea id="description" name="description" placeholder='Brief description of the deck' onChange={handleChange} value={description} ></textarea>
+                <label htmlFor='CreateDeck-description'>
+                    Description<textarea id="CreateDeck-description" name="CreateDeck-description" placeholder='Brief description of the deck' onChange={handleChange} value={description} ></textarea>
                 </label>
-                <Button variant='secondary' type='button' className='cancel-btn' onClick={() => navigate("/")}>Cancel</Button>
-                <Button variant='primary' type='submit' className='submit-btn' >Submit</Button>
+                <Button variant='secondary' type='button' className='CreateDeck-cancel-btn' onClick={() => navigate("/")}>Cancel</Button>
+                <Button variant='primary' type='submit' className='CreateDeck-submit-btn' >Submit</Button>
             </form>
         </>
     );
