@@ -28,13 +28,13 @@ function Deck() {
     useEffect(()=> {
         if (deckCards.length > 0) {
             const alllDeckCards = deckCards.map((card, index) => (
-                <div className="card-div" key={index} >
-                    <div className="card-div-front-div" >
-                    <p className="card-div-front-p" >{card.front}</p>
+                <div className="Deck-card-div" key={index} >
+                    <div className="Deck-card-div-front-div" >
+                    <p className="Deck-card-div-front-p" >{card.front}</p>
                 </div>
-                <div className="card-div-back-div" >
-                    <p className="card-div-back-p" >{card.back}</p>
-                    <div className="card-div-btns-div" >
+                <div className="Deck-card-div-back-div" >
+                    <p className="Deck-card-div-back-p" >{card.back}</p>
+                    <div className="Deck-card-div-btns-div" >
                         <Button variant="secondary" type="button" className="Deck-edit-card-btn" onClick={()=> navigate(`/decks/${deckId}/cards/${card.id}/edit`)} >
                             <Image src={edit} className="edit-img" />
                             Edit
@@ -73,10 +73,10 @@ function Deck() {
                 <Image src={home} className='home-icon' />
                 Home</Link> / {deck.name}
                 </div>
-            <div className="select-deck-div">
+            <div className="Deck-select-deck-div">
                 <h3>{deck.name}</h3>
                 <p>{deck.description}</p>
-                <div className="select-deck-btns-div">
+                <div className="Deck-select-deck-btns-div">
                     <Button variant="secondary" type="button" className="Deck-edit-deck-Btn" onClick={()=> navigate(`/decks/${deckId}/edit`)} >
                         <Image src={edit} className="edit-img" />
                         Edit
@@ -95,7 +95,7 @@ function Deck() {
                 </div>
            </div>
            <h1>Cards</h1>
-           <div className="cards-div">
+           <div className="Deck-cards-div">
                 {cardsToDisplay}
            </div>
         </>
