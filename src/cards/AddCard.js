@@ -36,10 +36,10 @@ function AddCard() {
                 <h1>{deckName}: Add Card</h1>
                 <form onSubmit={handleSubmit}>
                 <label htmlFor='front-card'>
-                Front<textarea id="front-card" name="front-card" placeholder='Front side of card' onChange={handleChange} value={frontCardText} ></textarea>
+                Front<textarea id="front-card" name="front-card" placeholder='Front side of card' onChange={handleChange} value={frontCardText} required ></textarea>
             </label>
             <label htmlFor='back-card'>
-                Back<textarea id="back-card" name="back-card" placeholder='Back side of card' onChange={handleChange} value={backCardText} ></textarea>
+                Back<textarea id="back-card" name="back-card" placeholder='Back side of card' onChange={handleChange} value={backCardText} required ></textarea>
             </label>
 <Button variant='secondary' type="button" className='done-btn' >Done</Button>
 <Button variant='primary' type='submit' >Save</Button>
