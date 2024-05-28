@@ -69,12 +69,12 @@ function Study() {
     }
 
     if (isCardFlipped === true) {
-        buttonsToDisplay = <><Button variant='secondary' className='flip-btn' 
+        buttonsToDisplay = <><Button variant='secondary' className='Study-flip-btn' 
         onClick={() => {
             handleCardFlip(true)
         }
     }>Flip</Button> <Button variant='primary'
-         className='next-btn' onClick={() => {            
+         className='Study-next-btn' onClick={() => {            
             if (firstFlip  === false) setFirstFlip(true);
             setCurrentCardNumber((cardNumber) => cardNumber + 1); 
             setSameCard(false);         
@@ -83,7 +83,7 @@ function Study() {
     }>Next</Button></>
     }
     else if (isCardFlipped === false) { 
-        buttonsToDisplay = <Button variant='secondary' className='flip-btn' 
+        buttonsToDisplay = <Button variant='secondary' className='Study-flip-btn' 
         onClick={() => {
        if (sameCard === true) {
         handleCardFlip(true);
@@ -109,7 +109,7 @@ function Study() {
             </Card> : <>
                 <h2>NotEnoughCards</h2>
                 <p>You need at least 3 cards to study. There are {deckCards.length} in this deck.</p>
-                 <Button variant='primary' 
+                 <Button variant='primary' className='Study-add-cards-to-deck'
                  onClick={() => navigate(`/decks/${deckId}/cards/new`)} > 
                     <Image src={add} className="add-img"  />Add Cards</Button>
             </>
