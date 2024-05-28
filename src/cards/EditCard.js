@@ -6,21 +6,22 @@ import { Image, Button } from 'react-bootstrap';
 
 function EditCard() {
   const { deckId, cardId } = useParams();
-    const [frontCardText, setFrontCardText] = useState("");
-    const [backCardText, setBackCardText] = useState("")
-    const navigate = useNavigate();
-    const [deck, setDeck] = useState({});
-    const [deckName, setDeckName] = useState("");
-    const [card, setCard] = useState({});
-    const [waitForCardToUpdate, setWaitForCardToUpdate] = useState(false);
-    useEffect(() => {
-        const abortController = new AbortController();
-        async function getDeck() {
-            const currentDeck = await readDeck(deckId, abortController.signal);
-            setDeck(currentDeck);
-            setDeckName(currentDeck.name)
-            const currentCard = await readCard(cardId, abortController.signal);
-            setCard(currentCard);
+  const [frontCardText, setFrontCardText] = useState("");
+  const [backCardText, setBackCardText] = useState("")
+  const navigate = useNavigate();
+  const [deck, setDeck] = useState({});
+  const [deckName, setDeckName] = useState("");
+  const [card, setCard] = useState({});
+  const [waitForCardToUpdate, setWaitForCardToUpdate] = useState(false);
+  
+  useEffect(() => {
+    const abortController = new AbortController();
+    async function getDeck() {
+        const currentDeck = await readDeck(deckId, abortController.signal);
+        setDeck(currentDeck);
+        setDeckName(currentDeck.name)
+        const currentCard = await readCard(cardId, abortController.signal);
+        setCard(currentCard);
         } getDeck();
     }, [card]);
 
