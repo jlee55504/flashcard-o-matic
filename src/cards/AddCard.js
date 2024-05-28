@@ -24,13 +24,13 @@ function AddCard() {
 
     const handleSubmit = event => {
         event.preventDefault();
-        createCard(deckId, {front: frontCardText, back: backCardText})
+        createCard(deckId, {front: frontCardText, back: backCardText});
         setFrontCardText("");
         setbackCardText("");
     }
 
     return (
-        <div className='add-card-div'>
+        <>
             <div className='nav-bar'><Link to="/" className='home-link' >
                 <Image src={home} className='home-icon' />
                 Home</Link> / <Link to={`/decks/${deckId}`}>{deckName}</Link> / Add Card</div>
@@ -45,8 +45,8 @@ function AddCard() {
         <Button variant='secondary' type="button" className='done-btn' >Done</Button>
         <Button variant='primary' type='submit' >Save</Button>
                 </form>
-            </div>
-    )
+            </>
+    );
 }
 
 export default AddCard;
