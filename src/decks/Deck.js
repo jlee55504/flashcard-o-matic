@@ -39,7 +39,7 @@ function Deck() {
                             <Image src={edit} className="edit-img" />
                             Edit
                         </Button>
-                        <Button variant="danger" type="button" className="Deck-trashcan-card-btn" onClick={(event) => {                             
+                        <Button variant="danger" type="button" className="Deck-delete-card-btn" onClick={(event) => {                             
                             handleDeleteCard(card.id)}} >
                             <Image src={trashcan} className="trashcan-img" />
                         </Button>
@@ -89,7 +89,7 @@ function Deck() {
                         <Image src={add} className="add-img" />
                             Add Cards
                     </Button>
-                    <Button variant="danger" type="button" className="Deck-trashcan-deck-btn" onClick={() => handleDeleteDeck(deckId)} >
+                    <Button variant="danger" type="button" className="Deck-delete-deck-btn" onClick={() => handleDeleteDeck(deckId)} >
                         <Image src={trashcan} className="trashcan-img" />
                     </Button>
                 </div>
