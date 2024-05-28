@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
-import { useParams, Link, useNavigate } from 'react-router-dom';
-import { createCard, readCard, readDeck, listDecks } from '../utils/api/index';
+import { useParams, Link } from 'react-router-dom';
+import { createCard, readDeck } from '../utils/api/index';
 import home from '../imgs/home.png';
 import Image from 'react-bootstrap/Image';
 function AddCard() {
@@ -9,7 +9,7 @@ function AddCard() {
     const [deckName, setDeckName] = useState("");
     const [frontCardText, setFrontCardText] = useState("");
     const [backCardText, setbackCardText] = useState("");
-   // const navigate = useNavigate();
+    
     useEffect(() => {
         async function getDeck() {
             const selectedDeck = await readDeck(deckId);
