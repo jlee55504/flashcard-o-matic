@@ -49,7 +49,7 @@ export function EditDeck() {
         <>
         <div className='nav-bar'><Link to="/" className='home-link' >
                 <Image src={home} className='home-icon' />
-                Home</Link> / {deck.name} / Edit Deck</div>
+                Home</Link> / <Link to={`/decks/${deckId}`}>{deck.name}</Link> / Edit Deck</div>
         <h1>Edit Deck</h1>
         <form onSubmit={handleSubmit}>
             <label htmlfor="EditDeck-deck-name" >Name
