@@ -44,13 +44,13 @@ if (location.pathname === "/") {
     <Image src={add} className="add-img" />
     Create Deck</Button>
   decks = decksList.map((deck, index) => (
-    <div className="deck-div" key={index} >
-      <div className="header-card-count-div">
-        <h2 className="deck-title">{deck.name}</h2>
-        <h5 className="card-count-div">{deck.cards.length} cards</h5>
+    <div className="Layout-index-deck-div" key={index} >
+      <div className="Layout-index-header-card-count-div">
+        <h2 className="Layout-index-deck-title">{deck.name}</h2>
+        <h5 className="Layout-index-card-count-div">{deck.cards.length} cards</h5>
       </div>
-      <p className="deck-description">{deck.description}</p>
-    <div className="btns-div">
+      <p className="Layout-index-deck-description">{deck.description}</p>
+    <div className="Layout-index-btns-div">
       <Button variant="secondary" type="button" className="Layout-index-view-deck-btn" onClick={() => navigate(`/decks/${deck.id}`)} >
         <Image src={eye} className="eye-img" />
           View</Button> 
