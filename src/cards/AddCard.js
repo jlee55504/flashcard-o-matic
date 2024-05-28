@@ -32,7 +32,7 @@ function AddCard() {
         <div className='add-card-div'>
 <div className='nav-bar'><Link to="/" className='home-link' >
                 <Image src={home} className='home-icon' />
-                Home</Link> / <Link>{deckName}</Link> / Add Card</div>
+                Home</Link> / <Link to={`/decks/${deckId}`}>{deckName}</Link> / Add Card</div>
                 <h1>{deckName}: Add Card</h1>
                 <form onSubmit={handleSubmit}>
                 <label htmlFor='front-card'>
