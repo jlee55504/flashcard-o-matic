@@ -52,13 +52,13 @@ if (location.pathname === "/") {
       </div>
       <p className="deck-description">{deck.description}</p>
     <div className="btns-div">
-      <Button variant="secondary" type="button" className="Layout-index-view-btn" onClick={() => navigate(`/decks/${deck.id}`)} >
+      <Button variant="secondary" type="button" className="Layout-index-view-deck-btn" onClick={() => navigate(`/decks/${deck.id}`)} >
         <Image src={eye} className="eye-img" />
           View</Button> 
-        <Button type="button" variant="primary" className="Layout-index-study-btn" onClick={() => navigate(`/decks/${deck.id}/study`)} >
+        <Button type="button" variant="primary" className="Layout-index-study-deck-btn" onClick={() => navigate(`/decks/${deck.id}/study`)} >
             <Image src={book} className="book-img" />
               Study</Button>
-          <Button variant="danger" type="button" className="Layout-index-delete-btn" value={index} onClick={ () => HandleDeleteDeck(deck.id)}>
+          <Button variant="danger" type="button" className="Layout-index-delete-deck-btn" value={index} onClick={ () => HandleDeleteDeck(deck.id)}>
             <Image src={trashcan} className="trashcan-img" />
           </Button>    
   </div>
