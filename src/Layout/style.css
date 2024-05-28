@@ -20,6 +20,22 @@ label {
 
 }
 
+.home-link {
+    text-decoration: none;
+}
+.home-icon {
+    vertical-align: sub;
+    margin-right: .4rem;
+}
+.nav-bar {
+    background-color:#e2e2e2de;
+    color:#575454d4;
+    border-radius: 5px;
+    font-size: 1.3rem;
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
 .edit-img {
 
 }
@@ -33,7 +49,7 @@ label {
 
 /* Start of './Layout/index.js' */
 
-.deck-div {
+.Layout-index-deck-div {
     border: 1px solid #dfd6d6;
     padding: 1.1rem;
     border-radius: 5px;
@@ -49,11 +65,11 @@ label {
 .trashcan-btn {
     justify-self: flex-end;
 }
-.btns-div {
+.Layout-index-btns-div {
     display: flex;
 }
 
-.view-link {
+.Layout-index-view-deck-btn {
  margin-right: 1%; 
  background-color: #6c757d;
  color: #fff;
@@ -67,7 +83,7 @@ label {
  display: flex;
 }
 
-.view-link:hover {
+/*.view-link:hover {
     color: #fff;
     background-color: #5c636a;
     border-color: #565e64;
@@ -92,22 +108,8 @@ label {
     text-decoration: none; 
     background-color: #6c757d;
     border-color: #6c757d;
-}
 
-.study-link {
-    margin-right: 75%; 
-    background-color: #0d6efd;
-    color:#fff;
-    padding: .1rem 3.25rem .1rem 2.75rem;
-    border-radius: 6px;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 5.4rem;
-    gap: 3px;
-}
-.study-link:hover {
+    .study-link:hover {
      border-color: #0a58ca;
      background-color: #0b5ed7;
      color:#fff;   
@@ -132,6 +134,26 @@ label {
     border-color: #0d6efd;
     color: #fff;
     text-decoration: none;
+}
+
+}
+*/
+.Layout-index-study-deck-btn {
+    margin-right: 75%; 
+    background-color: #0d6efd;
+    color:#fff;
+    padding: .1rem 3.25rem .1rem 2.75rem;
+    border-radius: 6px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5.4rem;
+    gap: 3px;
+}
+
+.Layout-index-delete-deck-btn {
+
 }
 
 .create-deck-link {
@@ -215,47 +237,33 @@ label {
     border-color: #dc3545;
     text-decoration: none;
 }
-.card-count-div {
+.Layout-index-card-count-div {
     display:inline-block;
     color: #a5a5a5;
 }
 
-.deck-title {
+.Layout-index-deck-title {
     display:inline-block;
     color: #676666;
 }
 
-.header-card-count-div {
+.Layout-index-header-card-count-div {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.deck-description {
+.Layout-index-deck-description {
     color: #676666;
 }
 
-.header-card-count-div {
+.Layout-indexheader-card-count-div {
 
 }
 /* End of './Layout/index.js' */
 
 
 /* Start of CreateDeck.js */
-.home-link {
-    text-decoration: none;
-}
-.home-icon {
-    vertical-align: sub;
-    margin-right: .4rem;
-}
-.nav-bar {
-    background-color:#e2e2e2de;
-    color:#575454d4;
-    border-radius: 5px;
-    font-size: 1.3rem;
-    padding: 1rem;
-    margin-bottom: 2rem;
-}
+
 
 .create-deck-h1 {
 
@@ -348,8 +356,8 @@ label {
 .select-deck-div {
     margin-bottom: 1.5rem;
 }
-.card-div:has(.card-div-back-div):has(.card-div-btns-div):has(.Deck-trashcan-card-btn):active,
-.select-deck-div:has(.select-deck-btns-div):has(.Deck-trashcan-deck-btn):active {
+.card-div:has(.card-div-back-div):has(.card-div-btns-div):has(.Deck-delete-card-btn):active,
+.select-deck-div:has(.select-deck-btns-div):has(.Deck-delete-deck-btn):active {
 background-color: #d7d7d7d9;
 }
 .cards-div {
@@ -373,7 +381,7 @@ background-color: #d7d7d7d9;
 
  }
 
- .Deck-trashcan-deck-btn {
+ .Deck-delete-deck-btn {
 
  }
 /* End of Deck.js */
@@ -420,9 +428,7 @@ background-color: #d7d7d7d9;
 #EditCard-front-text {
     height: 5.7rem;
 }
-.a {
-    
-}
+
 #EditCard-back-text {
     height: 6rem;
     margin-bottom: 1rem;
