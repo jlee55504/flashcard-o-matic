@@ -15,9 +15,10 @@ function Deck() {
     const [ deck, setDeck ] = useState({});
     const navigate = useNavigate();
     const [ cardsToDisplay, setCardsToDisplay ] = useState([]);
+    const abortController = new AbortController();
     useEffect(() => {
         async function getDeck() {
-            const selectedDeck = await readDeck(deckId);
+            const selectedDeck = await readDeck(deckId, abortController.signal);
             setDeck(selectedDeck);
             setDeckCards(selectedDeck.cards);
             setUpdateCardList(false);
@@ -53,7 +54,7 @@ function Deck() {
     async function handleDeleteCard(cardId) {
         const confirm = window.confirm("Delete this card? \n You will not be able to recover it.");
         if (confirm === true) {
-            await deleteCard(cardId);   
+            await deleteCard(cardId, abortController.signal);   
             setUpdateCardList(!false);
         }
     }
@@ -61,44 +62,44 @@ function Deck() {
     async function handleDeleteDeck(deckId) {
         const confirm = window.confirm("Delete this deck? \n You will not be able to recover it.");
         if (confirm === true) {
-            await deleteDeck(deckId); 
+            await deleteDeck(deckId, abortController.signal); 
             navigate("/");
         }
     }
      
     return (
-        <div className='-deck-deck-div'>
+        <>
             <div className='nav-bar'><Link to="/" className='home-link' >
                 <Image src={home} className='home-icon' />
                 Home</Link> / {deck.name}
                 </div>
             <div className="select-deck-div">
-            <h3>{deck.name}</h3>
-            <p>{deck.description}</p>
-            <div className="select-deck-btns-div">
-                <Button variant="secondary" type="button" className="Deck-edit-deck-Btn" onClick={()=> navigate(`/decks/${deckId}/edit`)} >
-                    <Image src={edit} className="edit-img" />
-                    Edit
-                </Button>
-                <Button variant="primary" type="button" className="Deck-study-deck-btn" onClick={()=> navigate(`/decks/${deckId}/study`)} >
-                    <Image src={book} className="book-img" />
-                    Study
-                </Button>
-                <Button variant="primary" type="button" className="Deck-add-cards-to-deck-btn" onClick={()=> navigate(`/decks/${deckId}/cards/new`)} >
-                    <Image src={add} className="add-img" />
-                    Add Cards
-                </Button>
-                <Button variant="danger" type="button" className="Deck-trashcan-deck-btn" onClick={() => handleDeleteDeck(deckId)} >
-                    <Image src={trashcan} className="trashcan-img" />
-                </Button>
-            </div>
+                <h3>{deck.name}</h3>
+                <p>{deck.description}</p>
+                <div className="select-deck-btns-div">
+                    <Button variant="secondary" type="button" className="Deck-edit-deck-Btn" onClick={()=> navigate(`/decks/${deckId}/edit`)} >
+                        <Image src={edit} className="edit-img" />
+                        Edit
+                    </Button>
+                    <Button variant="primary" type="button" className="Deck-study-deck-btn" onClick={()=> navigate(`/decks/${deckId}/study`)} >
+                        <Image src={book} className="book-img" />
+                        Study
+                    </Button>
+                    <Button variant="primary" type="button" className="Deck-add-cards-to-deck-btn" onClick={()=> navigate(`/decks/${deckId}/cards/new`)} >
+                        <Image src={add} className="add-img" />
+                            Add Cards
+                    </Button>
+                    <Button variant="danger" type="button" className="Deck-trashcan-deck-btn" onClick={() => handleDeleteDeck(deckId)} >
+                        <Image src={trashcan} className="trashcan-img" />
+                    </Button>
+                </div>
            </div>
            <h1>Cards</h1>
            <div className="cards-div">
-            {cardsToDisplay}
+                {cardsToDisplay}
            </div>
-        </div>
-    )
+        </>
+    );
 }
 
 export default Deck;
