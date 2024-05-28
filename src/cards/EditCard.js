@@ -55,7 +55,7 @@ function EditCard() {
             <h1>Edit Card</h1>
             <div className='nav-bar'><Link to="/" className='home-link' >
                 <Image src={home} className='home-icon' />
-                Home</Link> / <Link>Deck {deckName}</Link> / Edit Card {card.id}</div>
+                Home</Link> / <Link to={`/decks/${deckId}`}>Deck {deckName}</Link> / Edit Card {card.id}</div>
             <form onSubmit={handleSubmit}>
                 <label htmlfor="EditCard-front-text" className='EditCard-front-text-label' >
                     Front
