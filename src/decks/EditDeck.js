@@ -41,8 +41,7 @@ export function EditDeck() {
         });
         setWaitForDeckToUpdate(true);  
         setDeckName("");
-        setDeckDescription("");
-             
+        setDeckDescription("");         
     }
 
     return (
