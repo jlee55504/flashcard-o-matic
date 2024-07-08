@@ -53,8 +53,8 @@ function EditCard() {
   
     /* A 'div' JSX 'element' is 'returned' with the "nav-bar" 'div' inside which 
     contains a 'Link' JSX 'component' (which brings users to the "Home page") with
-    an 'react-bootstrap' 'Image' 'element' inside with the 'text' "Home" followed 
-    by the text " / ", a 'Link' JSX 'element' to the  the 'link' to the "Deck.js" 
+    an 'img' JSX 'element' inside with the 'text' "Home" followed by the text 
+    " / ", a 'Link' JSX 'element' to the  the 'link' to the "Deck.js" 
     'file' that displays the current "deck", and the 'text' " / Edit Card ", plus 
     the "card" 'variable's' "id" 'key' 'value', an 'h1' JSX 'element' with the 
     'text' "Edit Card". A 'Routes' and 'Route' 'component' are used to display the 
@@ -68,7 +68,7 @@ function EditCard() {
         Home</Link> / <Link to={`/decks/${ deckId }`}>Deck { deck.name }</Link> / Edit Card { cardId }</div>
         <h1>Edit Card</h1>
         <Routes>
-          <Route path="/edit/*" element={ <AddEditCards /> } />
+          <Route path="/edit/*" element={<AddEditCards />} />
         </Routes>
       </div>
       );

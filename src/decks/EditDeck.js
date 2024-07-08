@@ -80,7 +80,7 @@ function EditDeck() {
               console.log( error );
             }
         } updateTheDeck();
-      } return () => abortController.abort();
+      } return ()=> abortController.abort();
     }, [ waitForDeckToUpdate ] ); 
       
     /* The "handleChange" 'function' uses a "target" 'object' 'parameter' and
@@ -114,14 +114,14 @@ function EditDeck() {
     }
     /* A 'div' JSX 'element' is 'returned' with the "nav-bar" 'div' inside which 
     contains a 'Link' JSX 'component' (which brings users to the "Home page") with
-    an 'react-bootstrap' 'Image' 'elements' inside with the 'text' "Home" followed 
-    by the text " / ", a 'Link' JSX 'element' to the specified "deck's" "Deck.js" 
-    page, and the text "/Edit Deck" followed by a JSX 'h1' 'element' with the 
-    'text' "Edit Deck" followed by a 'form' 'element' (with the "handleSubmit" 
-    'function' as the 'value' for its 'onSubmit' 'attribute') with two 'label' 
-    JSX 'elements', a 'text input' JSX 'element', a 'textarea' JSX 'element', and 
-    two 'react-bootstrap' 'Button' 'elements'. Both the 'text' and 'textarea' have 
-    the "handleChange" 'function' for its 'onChange' 'attribute'. */
+    an 'img' JSX 'element' inside with the 'text' "Home" followed by the text 
+    " / ", a 'Link' JSX 'element' to the specified "deck's" "Deck.js" page, and 
+    the text "/Edit Deck" followed by a JSX 'h1' 'element' with the 'text' "Edit
+    Deck" followed by a 'form' 'element' (with the "handleSubmit" 'function' as
+    the 'value' for its 'onSubmit' 'attribute') with two 'label' JSX 'elements'
+    , a 'text input' JSX 'element', a 'textarea' JSX 'element', and two 
+    'button' JSX 'elements'. Both the 'text' and 'textarea' have the 
+    "handleChange" 'function' for its 'onChange' 'attribute'. */
     return (
       <div>
         <div className='nav-bar'><Link to="/" className='home-link' >

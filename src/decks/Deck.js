@@ -74,7 +74,7 @@ function Deck() {
             console.log( error );
           }
       } getDeck();
-        return () => abortController.abort();
+        return ()=> abortController.abort();
     }, [ loadDeckInfo, updateCardList ]);
   
     /* The "handleDeleteCard" 'function' takes a 'parameter' named "cardId"
@@ -97,7 +97,7 @@ function Deck() {
               console.log( error );
             }
         } deleteTheCard();
-          return () => abortController.abort();
+          return ()=> abortController.abort();
       }
     }
   
@@ -131,34 +131,34 @@ function Deck() {
     " / ", then the "deck" 'variable's' "name" 'key' 'value' in 'text'. After 
     that, another 'div' JSX 'element' follows displaying the "deck" 'variable's' 
     "name" 'key' 'value', the "deck" 'variable's' "decription" 'key' 'value', and
-    four 'react-bootstrap' 'Button' 'element' (all with 'react-bootstrap' 'Image' 
-    'elements' inside). The first displays the 'text' "Edit" with an 'onClick' 
-    'attribute' with the "navigate" 'variable' as its value with the 'text', 
-    "/decks/" plus the 'value' of the "deckId" 'variable', plus "/edit" as its 
-    argument. This 'link' will display the "EditDeck.js" 'file'. The second 
-    'react-bootstrap' 'Button' 'elements' displays the 'text' "Study" with an 
-    'onClick' 'attribute' with the "navigate" 'variable' as its value with the 
-    'text', "/decks/" plus the 'value' of the "deckId" 'variable', plus "/study" 
-    as its argument. This 'link' will display the "Study.js" 'file'. The third 
-    'button' JSX 'element' displays the 'text' "Add Cards" with an 'onClick' 
-    'attribute' with the "navigate" 'variable' as its value with the 'text', 
-    "/decks/" plus the 'value' of the "deckId" 'variable', plus "/cards/new" as 
-    its argument. This 'link' will display the "AddCards.js" 'file'. The final 
-    'button' JSX 'element' has an 'onClick' 'attribute' with the "deleteDeck" 
-    'function' as the 'value' with the "deckId" as the 'argument' for its value. 
-    After this, an 'h2' JSX 'element' follows with the 'text' "Cards". If the 
+    four 'button' JSX 'elements (all with 'img' JSX 'elements' inside). The 
+    first displays the 'text' "Edit" with an 'onClick' 'attribute' with the 
+    "navigate" 'variable' as its value with the 'text', "/decks/" plus the 
+    'value' of the "deckId" 'variable', plus "/edit" as its argument. This 
+    'link' will display the "EditDeck.js" 'file'. The second 'button' JSX 
+    'element' displays the 'text' "Study" with an 'onClick' 'attribute' with the
+    "navigate" 'variable' as its value with the 'text', "/decks/" plus the 
+    'value' of the "deckId" 'variable', plus "/study" as its argument. This 
+    'link' will display the "Study.js" 'file'. The third 'button' JSX 'element'
+    displays the 'text' "Add Cards" with an 'onClick' 'attribute' with the 
+    "navigate" 'variable' as its value with the 'text', "/decks/" plus the 
+    'value' of the "deckId" 'variable', plus "/cards/new" as its argument. 
+    This 'link' will display the "AddCards.js" 'file'. The final 'button' JSX
+    'element' has an 'onClick' 'attribute' with the "deleteDeck" 'function' 
+    as the 'value' with the "deckId" as the 'argument' for its value. After 
+    this, an 'h2' JSX 'element' follows with the 'text' "Cards". If the 
     "deckCard's" value is 'truthy', a '.map' 'method' is run on the 
     "deckCards" 'variable' and returns a 'div' JSX 'element' that contains 
     every item in the "deckCards" 'variable's' "front" and 'backs' 'key's' 
-    'value', and two 'react-bootstrap' 'Button' 'elements' (each with an 
-    'react-bootstrap' 'Image' 'element' inside).  The first one has the 'text' 
-    "Edit" and an 'onChange' 'attribute' with the "navigate" 'varible' (with the 
-    'text' "/decks/", plus the "deckId" 'variable', plus "/cards/", plus the 
-    current item in the "deckCards" 'variable's' "id" 'key' 'value', followed by 
-    "/edit") for its value. The second 'react-bootstrap' 'Button' 'element' 
-    has the "handleDeleteDeck" 'function' (with the current item in the 
-    "deckCards" 'variable's' "id" 'key' 'value' for its 'argument') as the 'value'
-    for its 'onClick' 'attribute'. If the "deckCards" 'variable's' is 'falsey', an
+    'value', and two 'button' JSX 'elements' (each with an 'img' JSX 
+    'element' inside).  The first one has the 'text' "Edit" and an 
+    'onChange' 'attribute' with the "navigate" 'varible' (with the 'text' 
+    "/decks/", plus the "deckId" 'variable', plus "/cards/", plus the current
+    item in the "deckCards" 'variable's' "id" 'key' 'value', followed by 
+    "/edit") for its value. The second 'button' JSX 'element' has the 
+    "handleDeleteDeck" 'function' (with the current item in the "deckCards" 
+    'variable's' "id" 'key' 'value' for its 'argument') as the 'value' for 
+    its 'onClick' 'attribute'. If the "deckCards" 'variable's' is 'falsey', an 
     empty 'div' JSX 'element' is 'returned' instead. */
     return (
       <div>
@@ -171,19 +171,19 @@ function Deck() {
           <p>{ deck.description }</p>
           <div className="Deck-select-deck-btns-div">
             <Button type="button" className="Deck-edit-deck-btn" variant="secondary"
-             onClick={ () => navigate(`/decks/${ deckId }/edit`) } >
+             onClick={ ()=> navigate(`/decks/${ deckId }/edit`) } >
               <Image src={ edit } 
               alt="edit--v1"/>
                 Edit
             </Button>
             <Button type="button" variant="primary" className="Deck-study-deck-btn" 
-            onClick={ () => navigate(`/decks/${ deckId }/study`) } >
+            onClick={ ()=> navigate(`/decks/${ deckId }/study`) } >
               <Image src={ book } 
               alt="bookmark" className="book-img" />
                 Study
             </Button>
             <Button type="button" className="Deck-add-cards-to-deck-btn" variant="primary"
-            onClick={ () => navigate(`/decks/${ deckId }/cards/new`) } >
+            onClick={ ()=> navigate(`/decks/${ deckId }/cards/new`) } >
               <Image src={ add } className="add-img"
               alt="plus-math"/>
                 Add Cards
@@ -205,7 +205,7 @@ function Deck() {
               <p className="Deck-card-div-back-p" >{ card.back }</p>
               <div className="Deck-card-div-btns-div" >
                 <Button variant="secondary" type="button" className="Deck-edit-card-btn" 
-                onClick={ () => navigate(`/decks/${ deckId }/cards/${ card.id }/edit`) } >
+                onClick={ ()=> navigate(`/decks/${ deckId }/cards/${ card.id }/edit`) } >
                   <Image src={ edit }
                   alt="edit--v1"/>
                     Edit

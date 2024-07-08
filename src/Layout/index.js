@@ -116,12 +116,11 @@ function Layout() {
   }
 
   /* This 'if statement' checks if the 'URL' is "/". If so, the "createDeckBtn" 
-  'variable' will store a 'react-bootstrap' 'Button' 'element' (with a 
-  'react-bootstrap' 'Image' 'element' inside) that will load the "CreateDeck" 
-  'component'. The "decks" 'variable' will also hold all data from every "deck" 
-  on the local server via JSX 'elements'. If the 'URL' 'path' is different, the 
-  "createDeckBtn" and the "CreateDeck" 'variable' will be given the value 'null'. 
-  */
+  'variable' will store a 'react-bootstrap' 'Button' 'element' that will load the
+  "CreateDeck" 'component'. The "decks" 'variable' will also hold all data from
+  every "deck" on the local server via JSX 'elements'. If the 'URL' 'path' is 
+  different, the "createDeckBtn" and the "CreateDeck" 'variable' will be given
+  the value 'null'. */
   if ( location.pathname === "/" ) {
     createDeckBtn = <Button type="button" variant="secondary" className="Layout-index-create-deck-btn" 
     onClick={ () => navigate("/decks/new") } >

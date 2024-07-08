@@ -35,13 +35,13 @@ function AddCard() {
 
   /* A 'div' JSX 'element' is 'returned' with the "nav-bar" 'div' inside which 
   contains a 'Link' JSX 'component' (which brings users to the "Home page") with
-  an 'react-bootstrap' 'Image' 'element' inside with the 'text' "Home" followed by 
-  the text " / ", a 'Link' JSX 'element' to the "Deck.js" 'file' that displays the 
-  current "deck", and the 'text' " / Add Card ". Two 'h2' JSX 'elements' follow 
-  the "nav-bar" 'div'. The first displays the 'value' of the "deckName" 
-  'variable'. The second displays the 'text' "Add Card". A 'Routes' and 'Route' 
-  'component' display the "AddEdditCards.js" 'file/component' which handles the 
-  "AddCard.js" 'file's/component's functionality'. */
+  an 'img' JSX 'element' inside with the 'text' "Home" followed by the text 
+  " / ", a 'Link' JSX 'element' to the  the 'link' to the "Deck.js" 
+  'file' that displays the current "deck", and the 'text' " / Add Card ". 
+  Two 'h2' JSX 'elements' follow the "nav-bar" 'div'. The first displays the 
+  'value' of the "deckName" 'variable'. The second displays the 'text' 
+  "Add Card". A 'Routes' and 'Route' 'component' display the "AddEdditCards.js"
+  'file/component' which handles the "AddCard.js" 'file's/component's functionality'. */
   return (
     <div>
       <div className='nav-bar'><Link to="/" className='home-link' >
@@ -49,7 +49,7 @@ function AddCard() {
         alt="home" className='home-icon'/>Home </Link> / <Link to={`/decks/${ deckId }`}> { deckName }</Link> / Add Card</div>
       <h2 className='AddCard-deck-name-h2'> { deckName }: </h2><h2 className='AddCard-add-card-h2'> Add Card</h2>
       <Routes>
-        <Route path="/new/*" element={ <AddEditCards /> } />
+        <Route path="/new/*" element={<AddEditCards />} />
       </Routes>
     </div>
   );

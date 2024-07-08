@@ -250,17 +250,17 @@ function Study() {
     }
   
     /* If the "isCardFlipped" 'variable' is 'true', the "buttonsToDisplay" 
-    'variable' will hold a 'div' JSX 'element' containing two 'react-bootstrap' 
-    'Button' 'elements'; one with the 'text' "Flip" and the other with the "text" 
-    "Next". The first 'button' JSX 'element' has the "handleCardFlip" 'function' 
-    with 'true' as its 'argument' as the 'value' for its 'onClick' 'attribute'. 
-    The second 'button' JSX 'element' checks if the "firstFlip" 'variable' is 
-    'false'. If so, the "setFirstFlip" 'function' is 'called' with 'true' as its 
+    'variable' will hold a 'div' JSX 'element' containing two 'button' JSX 
+    'elements'; one with the 'text' "Flip" and the other with the "text" "Next". 
+    The first 'button' JSX 'element' has the "handleCardFlip" 'function' with 
+    'true' as its 'argument' as the 'value' for its 'onClick' 'attribute'. The 
+    second 'button' JSX 'element' checks if the "firstFlip" 'variable' is 'false'.
+    If so, the "setFirstFlip" 'function' is 'called' with 'true' as its 
     'argument', the "setCurrentCardNumber" 'function' is 'called' adding the 
     number '1' to the "currentCardNumber" 'variable's' current 'value', the 
     "setSameCard" 'function' is 'called' with 'false' as its 'argument', and the
     "handleCardFlip" 'function' is 'called' when the user 'clicks' this 
-    'Button'. */
+    'button'. */
     if ( isCardFlipped === true ) {
       buttonsToDisplay = 
       <div>
@@ -279,11 +279,11 @@ function Study() {
       </div>
     }
       /* If the "isCardFlipped" 'variable' is 'false', the "buttonsToDisplay" will 
-      hold a 'react-bootstrap' 'Button' 'element' with the 'text' "Flip" that has an 
-      'onClick' 'attribute' that checks if the "sameCard"'variable' is 'true'. If 
-      so, the "handleCardFlip" 'function' is 'called' with 'true' as its 
-      'argument' followed by 'return'. Otherwise, the ""handleCardFlip" 'function' 
-      is 'called' without an 'argument'. */
+      hold a 'button' JSX 'element' with the 'text' "Flip" that has an 'onClick' 
+      'attribute' that checks if the "sameCard"'variable' is 'true'. If so, the 
+      "handleCardFlip" 'function' is 'called' with 'true' as its 'argument' followed
+      by 'return'. Otherwise, the ""handleCardFlip" 'function' is 'called' without 
+      an 'argument'. */
       else if ( isCardFlipped === false ) { 
         buttonsToDisplay = <Button className='Study-flip-btn' variant='secondary' 
         onClick={ () => {
@@ -297,27 +297,25 @@ function Study() {
   
     /* A 'div' JSX 'element' is 'returned' with the "nav-bar" 'div' inside which 
     contains a 'Link' JSX 'component' (which brings users to the "Home page") with
-    an 'react-bootstrap' 'Image' 'element' inside with the 'text' "Home" followed 
-    by the text " / ", a 'Link' JSX 'element' to the  the 'link' to the "Deck.js" 
+    an 'img' JSX 'element' inside with the 'text' "Home" followed by the text 
+    " / ", a 'Link' JSX 'element' to the  the 'link' to the "Deck.js" 
     'file' that displays the current "deck", and the 'text' " / Study", an 'h1' 
     JSX 'element' with the 'text' "Study:" and the 'value' of the "deckName" 
     'variable'. A 'ternary operator' checks if the "deckCards" 'length' is equal 
     to or greater than the number '3' (there are more than three 'cards/objects').
-    If so, a 'react-bootstrap' 'Card' 'element' is 'returned' with an 
-    'react-bootstrap' 'Card.title' 'element' with the 'text' "Card " plus the 
-    'value' of the "currentCardNumber", the 'text' " of ", and the 'value' of the 
-    "deckCard" 'variable's' 'length' (the total number of "cards/objects"), 
-    followed py a 'react-bootstrap' 'Card.text' 'element' with the 'value' of the 
-    "currentCardText" 'variable' followed by the 'value' of the "buttonsToDisplay" 
-    'variable'. Otherwise, a 'div' JSX 'element' is 'returned' with an 'h2' JSX 
-    'element' with the 'text' "Not enough cards." followed by a 'p' JSX 'element' 
-    with the 'text' "You need at least 3 cards to study. There are ", plus the 
-    "deckCards" 'variable's' 'length' plus the 'text' " in this deck.", followed 
-    by a 'react-bootstrap' 'Button' 'element' with an 'react-bootstrap' 'Image' 
-    'element' inside and an 'onClick' 'attribute' with the the "navigate" 
-    'variable' with 'text' "/decks", plus the 'value' of the "deckId" 'variable', 
-    plus "/cards/new". This will take users load the "AddCards.js" 'file' for the 
-    specific "deck". */
+    If so, a 'div' JSX 'element' is 'returned' with an 'h3' JSX 'element' with 
+    the 'text' "Card " plus the 'value' of the "currentCardNumber", the 'text' 
+    " of ", and the 'value' of the "deckCard" 'variable's' 'length' (the total 
+    number of "cards/objects"), followed py a 'p' JSX 'element' with the 'value' 
+    of the "currentCardText" 'variable' followed by the 'value' of the "buttonsToDisplay" 
+    'variable'. Otherwise, a 'div' JSX 'element' is 'returned' with an 'h2' JSX 'element' 
+    with the 'text' "Not enough cards." followed by a 'p' JSX 'element' with the 'text' 
+    "You need at least 3 cards to study. There are ", plus the "deckCards" 'variable's' 
+    'length' plus the 'text' " in this deck.", followed by a 'button' JSX 'element' 
+    with an 'img' JSX 'element' inside and an 'onClick' 'attribute' with the the 
+    "navigate" 'variable' with 'text' "/decks", plus the 'value' of the "deckId" 
+    'variable', plus "/cards/new". This will take users load the "AddCards.js" 'file' for 
+    the specific "deck". */
     return (
       <div>
         <div className='nav-bar'><Link to="/" className='home-link' >

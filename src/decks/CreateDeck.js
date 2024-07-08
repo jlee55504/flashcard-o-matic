@@ -65,17 +65,17 @@ function CreateDeck() {
       
     /* A 'div' JSX 'element' is 'returned' with the "nav-bar" 'div' inside which 
     contains a 'Link' JSX 'component' (which brings users to the "Home page") with
-    an 'react-bootstrap' 'Image' 'elements' inside with the 'text' "Home" followed 
-    by the text " / ", a 'Link' JSX 'element' to the specified "deck's" "Deck.js" 
-    page, and the text "/Create Deck" followed by a JSX 'h1' 'element' with the 
-    'text' "Edit Deck" followed by a 'form' 'element' (with the "handleSubmit" 
+    an 'img' JSX 'element' inside with the 'text' "Home" followed by the text 
+    " / ", a 'Link' JSX 'element' to the specified "deck's" "Deck.js" page,
+    and the text "/Create Deck" followed by a JSX 'h1' 'element' with the 'text' 
+    "Edit Deck" followed by a 'form' 'element' (with the "handleSubmit" 
     'function' as the 'value' for its 'onSubmit' 'attribute') with two 'label' 
     JSX 'elements', a 'text input' JSX 'element', a 'textarea' JSX 'element', and
-    two 'react-bootstrap' 'Button' 'elements' (the first has the 'text' "Cancel" 
-    while the other has the 'text' "Submit"). Both the 'text' and 'textarea' have 
-    the "handleChange" 'function' for its 'onChange' 'attribute'. The first 
-    'react-bootstrap' 'Button' 'element's' 'onClick' 'attribute' has the 
-    "navigate" 'variable' for its value with "/" as its 'argument'. */
+    two 'button' JSX 'elements' (the first has the 'text' "Cancel" while the 
+    other has the 'text' "Submit"). Both the 'text' and 'textarea' have the 
+    "handleChange" 'function' for its 'onChange' 'attribute'. The first 'button'
+    JSX 'element's' 'onClick' 'attribute' has the "navigate" 'variable' for its
+    value with "/" as its 'argument'. */
     return (
       <div>
         <div className='nav-bar'><Link to="/" className='home-link' >
