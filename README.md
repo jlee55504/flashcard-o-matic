@@ -2,15 +2,15 @@ Completed Chegg Skills "Flashcard-o-matic" "Qualified" project.
 
 ![Alt text](https://github.com/jlee55504/flashcard-o-matic-project/blob/main/src/imgs/Flashcard-o-matic-project%20'view'%20page.png?raw=true "Flashcard-o-matic-project 'view' page")
 
+Overview:
+This project displays decks of study cards. Each card has a question on the front and the answer on the back. Each deck can be 'studied/memorized' by flipping each card in each deck. Users can also edit and delete each card and deck.
+
 Built with:
   * React.js
       * React Bootstrap
   * CSS3
   * HTML5
   * Testing was done with Jest
-
-Overview:
-This project displays decks of study cards. Each card has a question on the front and the answer on the back. Each deck can be 'studied/memorized' by flipping each card in each deck. Users can also edit and delete each card and deck.
 
 I'm only going to be listing the 'files' I had to create/edit.
 
