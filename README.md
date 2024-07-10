@@ -1,4 +1,4 @@
-![Alt text] (C:\Users\larry\Pictures\Screenshots\Screenshot 2024-07-09 184219.png?raw=true "Flashcard-o-matic 'view' page")
+![Alt text](C:\Users\larry\Pictures\Screenshots\Screenshot 2024-07-09 184219.png?raw=true "Flashcard-o-matic 'view' page")
 
 Completed Chegg Skills "Flashcard-o-matic" "Qualified" project.
 
