@@ -1,4 +1,4 @@
-![Alt text](src/imgs/Flashcard-o-matic-project 'view' page.png?raw=true "Flashcard-o-matic-project 'view' page")
+![Alt text](https://github.com/jlee55504/flashcard-o-matic-project/blob/main/src/imgs/Flashcard-o-matic-project%20'view'%20page.png?raw=true "Flashcard-o-matic-project 'view' page")
 
 Completed Chegg Skills "Flashcard-o-matic" "Qualified" project.
 
