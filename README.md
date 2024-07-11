@@ -10,7 +10,7 @@ This project displays decks of study cards. Each card has a question on the fron
       * React Bootstrap
   * CSS3
   * HTML5
-  * Testing was done with Jest
+  * Jest used for testing
 
 ### I'm only going to be listing the 'files' I had to create/edit.
 
