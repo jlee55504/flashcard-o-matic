@@ -12,7 +12,7 @@ This project displays decks of study cards. Each card has a question on the fron
   * HTML5
   * Testing was done with Jest
 
-I'm only going to be listing the 'files' I had to create/edit.
+### I'm only going to be listing the 'files' I had to create/edit.
 
 ## src/Layout/index.js
 
