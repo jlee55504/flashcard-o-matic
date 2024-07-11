@@ -14,9 +14,10 @@ This project displays decks of study cards. Each card has a question on the fron
 
 I'm only going to be listing the 'files' I had to create/edit.
 
+## src/Layout/index.js
+
 ![Alt text](https://github.com/jlee55504/flashcard-o-matic-project/blob/main/src/imgs/Flashcard-o-matic%20project%20home%20screen%20image.png?raw=true "Flashcard-o-matic-project 'Layout/home' screen")
 
-## src/Layout/index.js
 The "Layout" 'function/component' diplays the "Header" 'component' and the 
 "Home.js", "Study.js", "CreateDeck.js", "Deck.js", "EditDeck.js", "AddCard.js", 
 and "EditCard.js" screens depending on the 'URL'. When the 'URL' is "/", the 
