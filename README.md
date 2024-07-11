@@ -24,9 +24,6 @@ and "EditCard.js" screens depending on the 'URL'. When the 'URL' is "/", the
 "Create Deck", all the "decks" on the local server along with the "view", "Study" 
 and a 'button' JSX 'element' to delete the specific "deck".
 
-## src/Layout/style.css
-CSS styling for all the 'files' to replicate Chegg Skill's example web page.
-
 ![Alt text](https://github.com/jlee55504/flashcard-o-matic-project/blob/main/src/imgs/Flashcard-o-matic%20project%20Edit%20Deck%20screen%20image.png?raw=true "Flashcard-o-matic-project 'Edit Deck' screen")
 
 ## src/decks/EditDeck.js
@@ -75,3 +72,6 @@ The "EditCard" 'function/component' displays the "nav-bar" 'div'. which
 ## src/cards/AddCard.js
 The "AddCard" 'function/component' allows users to add a "card" to the 
 specific "deck" and 'local server'.
+
+## src/Layout/style.css
+CSS styling for all the 'files' to replicate Chegg Skill's example web page.
