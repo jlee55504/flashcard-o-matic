@@ -1,4 +1,4 @@
-# Flashcard-O-Matic project
+# Flashcard-O-Matic Project
 
 Completed Chegg Skills "Flashcard-o-matic" "Qualified" project.
 
